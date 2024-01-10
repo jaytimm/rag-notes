@@ -1,3 +1,5 @@
+    ## [1] "2024-01-10"
+
 # RAG systems in R
 
 Notes and thoughts.
@@ -68,13 +70,13 @@ get_chat_response(prompt = paste0(query99 |> toupper(), p1),
   knitr::kable()
 ```
 
-| resp                                                                                         |
+| resp                                                                                              |
 |:-----------------------------------------------------------------------|
-| What are the major concerns of Generation X about President Biden’s policies?                |
-| How did Generation X vote in past presidential elections, specifically in 2020’s election?   |
-| What could President Biden do to earn the trust and confidence of Generation X?              |
-| Has the Biden administration addressed the issues specifically centered around Generation X? |
-| How does the political ideology of Generation X differ from other generations?               |
+| What specific policies of President Biden has Generation X expressed concern about?               |
+| How has President Biden’s administration addressed the concerns of Generation X?                  |
+| What is the importance of the Generation X vote in the 2024 Presidential Election?                |
+| How have Generation X’s political views evolved during President Biden’s term?                    |
+| What alternatives does Generation X seem to favor as the 2024 Presidential Election draws closer? |
 
 ### Step-back prompting
 
@@ -92,13 +94,13 @@ get_chat_response(prompt = paste0(query99 |> toupper(), p2),
   knitr::kable()
 ```
 
-| resp                                                                                                                                 |
+| resp                                                                                                                   |
 |:-----------------------------------------------------------------------|
-| What causes Generation X’s apprehensions towards President Biden as the 2024 elections approach?                                     |
-| Why is there a sense of unease among Generation X towards President Biden in the context of the upcoming 2024 Presidential Election? |
-| Can we delve into the reasons behind Generation X’s reservations about President Biden’s prospects in the 2024 election?             |
-| Why are the individuals from Generation X skeptical about President Biden’s campaign for the 2024 Presidential elections?            |
-| What are the factors contributing to the wariness of Generation X towards President Biden’s 2024 election campaign?                  |
+| Why is Generation X skeptical about President Biden’s potential re-election in 2024?                                   |
+| What are the reasons for the apprehension of Generation X towards President Biden as we approach 2024?                 |
+| Why does President Biden seem to struggle with gaining the support of Generation X for the 2024 Presidential Election? |
+| What are the factors contributing to the uncertainty of Generation X about President Biden’s leadership in 2024?       |
+| Why is Generation X hesitant about backing President Biden in the upcoming 2024 election?                              |
 
 ### Hypothetical answer (HyDE)
 
@@ -117,9 +119,9 @@ get_chat_response(prompt = paste0(query99 |> toupper(), hyde),
   knitr::kable()
 ```
 
-| resp                                                                                                                                                                                                                                                                                                                                                      |
+| resp                                                                                                                                                                                                                                                                                                                           |
 |:-----------------------------------------------------------------------|
-| Generation X’s wariness towards President Biden is influenced by concerns over economic instability, debates on free speech, and policies perceived as leaned towards younger and older demographics. Particularly, fears about increased taxes, inflation, and contentious social issues might sway their preference for the 2024 Presidential Election. |
+| Generation X is wary due to perceived weak economic policies, high inflation, and potential erosion of personal liberties under Biden’s administration. These concerns, combined with perceived lack of effective communication and transparency, potentially make Biden a less favored candidate for Gen X in 2024 elections. |
 
 ### Hypothetical questions
 
@@ -127,6 +129,8 @@ get_chat_response(prompt = paste0(query99 |> toupper(), hyde),
 2.  Embed chunk questions
 3.  Retrieve documents via question vectors
 4.  Aggregate highest ranked retrieved documents
+
+#### Build demo corpus & text chunks
 
 ``` r
 library(dplyr)
@@ -141,6 +145,8 @@ chunks <- articles |>
   textpress::rag_chunk_sentences(chunk_size = 2, 
                                  context_size = 1)
 ```
+
+#### Prompt & output
 
 ``` r
 n = 3
@@ -166,11 +172,11 @@ hyp_question[1:n,] |>
   knitr::kable()
 ```
 
-|                                                                                                         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-|:-----------|:-----------------------------------------------------------|
-| What does being a part of Generation X mean to Pinnock in her current role?                             | Pinnock says being Gen X serves her well in her current role. <b>She says she and her friends call their generation the MacGyvers, after the 1980s television character who could figure his way out of any jam using his own wits and knowledge. “We were the only generation to know what it was like to not work with technology but are not scared to work with it,” Pinnock says.</b> “You had to rely on yourself.                                                                                                                                                                                            |
-| What factors have caused a discrepancy between the mean and median retirement savings for Generation X? | The reason for the vast gulf between the mean and the median is the 40% of the demographic that has absolutely nothing saved for retirement, which drags down the average like an anchor. <b>Gen X was the first generation to enter the labor force after employers transitioned to defined contribution accounts like 401(k) plans. “While the generation before them could rely on pension plans, most Gen Xers have had to depend on themselves for retirement savings,” said Laura Sterling of Georgia’s Own Credit Union, the second-largest credit union in Georgia.</b> “Pensions are a thing of the past.” |
-| At what age did Generation X workers typically begin saving for retirement according to the study?      | Consequentially, Generation X fell behind on their savings before they even knew it was time to get started.” <b>According to the research, which surveyed 5,725 employees, the median age when Gen X workers began saving for retirement was 30, as compared with Millennials (25), Gen Z (19). Baby Boomers, who were working in the age of pensions and very early 401(k) plans, started at a median age of 35.</b> Now only 17% of Gen Xers feel very confident they will be able to retire with a comfortable lifestyle, according to the study conducted in late 2022.                                        |
+|                                                                                                     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+|:------------|:----------------------------------------------------------|
+| What are some ways in which Gen X has contributed to the popularity and acceptance of hip-hop?      | “It brought people sanity during a crazy time.” <b>D-Nice finds hip-hop and helping communities to be two defining traits of Generation X. He says the “MTV generation” has grown up viewing a wide array of music, including hip-hop.</b> He says that before the 1988 debut of “Yo!                                                                                                                                                                                                          |
+| What might be some benefits of Generation X starting retirement planning early according to D-Nice? | By putting a plan in place today, Generation X can work with their family to make sure the money their family has worked so hard to earn stays in their family and makes a rich retirement even more possible.” <b>Why retiring later than you hoped can be a good idea. Investors could be caught off-guard by a recession and a steep decline headed for stocks, Evercore ISI’s Julian Emanuel warned.</b> The meme coin has created a lot of crypto millionaires over the past three years. |
+| How might a later retirement date be beneficial for Generation X?                                   | On the other hand, Gen X Democrats like Piccolo point their disgust at conservative efforts to curb speech, particularly in schools and libraries. <b>“You can’t change history. They want to modify history.</b> They want to ban books.                                                                                                                                                                                                                                                      |
 
 ## Building contexts
 
