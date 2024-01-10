@@ -70,13 +70,13 @@ get_chat_response(prompt = paste0(query99 |> toupper(), p1),
   knitr::kable()
 ```
 
-| resp                                                                                              |
+| resp                                                                                                 |
 |:-----------------------------------------------------------------------|
-| What specific policies of President Biden has Generation X expressed concern about?               |
-| How has President Biden’s administration addressed the concerns of Generation X?                  |
-| What is the importance of the Generation X vote in the 2024 Presidential Election?                |
-| How have Generation X’s political views evolved during President Biden’s term?                    |
-| What alternatives does Generation X seem to favor as the 2024 Presidential Election draws closer? |
+| What policies of President Biden are causing concern among Generation X?                             |
+| How has President Biden’s approval rating shifted among Generation X since his inauguration?         |
+| What specific issues are driving Generation X’s skepticism towards President Biden’s administration? |
+| How did Generation X vote in the 2020 Election and what might that mean for 2024?                    |
+| Can President Biden regain support from Generation X before the 2024 election?                       |
 
 ### Step-back prompting
 
@@ -94,13 +94,13 @@ get_chat_response(prompt = paste0(query99 |> toupper(), p2),
   knitr::kable()
 ```
 
-| resp                                                                                                                   |
+| resp                                                                                                                                       |
 |:-----------------------------------------------------------------------|
-| Why is Generation X skeptical about President Biden’s potential re-election in 2024?                                   |
-| What are the reasons for the apprehension of Generation X towards President Biden as we approach 2024?                 |
-| Why does President Biden seem to struggle with gaining the support of Generation X for the 2024 Presidential Election? |
-| What are the factors contributing to the uncertainty of Generation X about President Biden’s leadership in 2024?       |
-| Why is Generation X hesitant about backing President Biden in the upcoming 2024 election?                              |
+| What are the reasons for Generation X’s skepticism towards President Biden as we approach the 2024 Presidential Election?                  |
+| Why does Generation X show reluctance towards President Biden’s potential re-election in 2024?                                             |
+| What elements make Generation X apprehensive about the possibility of President Biden seeking re-election in 2024?                         |
+| How does President Biden’s impact on issues significant to Generation X influence their sentiments towards the 2024 Presidential Election? |
+| Why isn’t President Biden striking a positive chord with Generation X, especially looking forward to the 2024 Presidential Election?       |
 
 ### Hypothetical answer (HyDE)
 
@@ -119,9 +119,9 @@ get_chat_response(prompt = paste0(query99 |> toupper(), hyde),
   knitr::kable()
 ```
 
-| resp                                                                                                                                                                                                                                                                                                                           |
+| resp                                                                                                                                                                                                                                                                        |
 |:-----------------------------------------------------------------------|
-| Generation X is wary due to perceived weak economic policies, high inflation, and potential erosion of personal liberties under Biden’s administration. These concerns, combined with perceived lack of effective communication and transparency, potentially make Biden a less favored candidate for Gen X in 2024 elections. |
+| Generation X may be wary of President Biden due to concerns regarding the economy and deficit spending, his handling of the pandemic, and his stance on issues such as foreign policy and climate change. Also, his age is a concern for some Gen X voters looking at 2024. |
 
 ### Hypothetical questions
 
@@ -150,7 +150,7 @@ chunks <- articles |>
 
 ``` r
 n = 3
-set.seed(999)
+set.seed(11)
 chunks_sample <- chunks |>
   filter(grepl('Generation X|Gen X', chunk_plus_context)) |>
   sample_n(n)
@@ -172,11 +172,11 @@ hyp_question[1:n,] |>
   knitr::kable()
 ```
 
-|                                                                                                     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-|:------------|:----------------------------------------------------------|
-| What are some ways in which Gen X has contributed to the popularity and acceptance of hip-hop?      | “It brought people sanity during a crazy time.” <b>D-Nice finds hip-hop and helping communities to be two defining traits of Generation X. He says the “MTV generation” has grown up viewing a wide array of music, including hip-hop.</b> He says that before the 1988 debut of “Yo!                                                                                                                                                                                                          |
-| What might be some benefits of Generation X starting retirement planning early according to D-Nice? | By putting a plan in place today, Generation X can work with their family to make sure the money their family has worked so hard to earn stays in their family and makes a rich retirement even more possible.” <b>Why retiring later than you hoped can be a good idea. Investors could be caught off-guard by a recession and a steep decline headed for stocks, Evercore ISI’s Julian Emanuel warned.</b> The meme coin has created a lot of crypto millionaires over the past three years. |
-| How might a later retirement date be beneficial for Generation X?                                   | On the other hand, Gen X Democrats like Piccolo point their disgust at conservative efforts to curb speech, particularly in schools and libraries. <b>“You can’t change history. They want to modify history.</b> They want to ban books.                                                                                                                                                                                                                                                      |
+|                                                                                                                                                  |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+|:---------------|:-------------------------------------------------------|
+| What are some characteristics of Generation X films and how did the Generation X movies “Before Sunset” and “Heathers” portray these attributes? | Travel, spontaneity, and the potential of something beautiful, especially when it comes to love, are hallmarks of Generation X films. <b>Not many did it better than the movie that spawned two more films: Before Sunset (2004) and Before Midnight (2013). “My teen angst bulls—t has a body count.”</b> If that doesn’t sum up the brilliantly dark and humorous Heathers, we don’t know what does.                                                                                                                                                                     |
+| How did the inflation-adjusted cost of attending a public four-year college impact the debt situation of Generation X?                           | According to the Education Data Initiative (EDI), the inflation-adjusted cost of attending a public four-year college soared from $2,499 in 1969-70 to $9,580 in 2020-21. <b>Gen Xers, unable to afford the degrees that many emerging new-economy jobs required, became the first generation to borrow its way into school — and decades of debt. “Gen X had to pay much more for college and was more likely to have student debt,” said Rogers.</b> Despite comprising just 20% of the population, Gen X now holds nearly 57% of America’s $1.63 trillion student debt. |
+| How did the criticism that Generation X faced in the ’90s compare to the criticism that Millennials and Gen Z receive from Boomers today?        | Aside from this whole “Karen generation” blip, Gen X continues to be largely overlooked, and that fact — as well as their silent delight in it — is possibly one of the most Generation X things to happen to the class of 1965 to 1980. <b>Back in the ’90s, Gen X bore the same kind of criticism Boomers tend to heap on Millennials and Gen Z now. It’s not necessarily that they want to watch a cage match.</b> It’s just they’re so relieved it’s someone else being called slackers and downers for a change.                                                      |
 
 ## Building contexts
 
