@@ -4,7 +4,12 @@ Notes and thoughts.
 
 -   [RAG systems in R](#rag-systems-in-r)
     -   [Query expansion](#query-expansion)
+        -   [Augmented query](#augmented-query)
+        -   [Step-back prompting](#step-back-prompting)
+        -   [Hypothetical answer (HyDE)](#hypothetical-answer-(hyde))
+        -   [Hypothetical questions](#hypothetical-questions)
     -   [Building contexts](#building-contexts)
+        -   [Sentence Window Retrieval](#sentence-window-retrieval)
     -   [Evaluation](#evaluation)
 
 ## Query expansion
@@ -63,13 +68,13 @@ get_chat_response(prompt = paste0(query99 |> toupper(), p1),
   knitr::kable()
 ```
 
-| resp                                                                                          |
+| resp                                                                                         |
 |:-----------------------------------------------------------------------|
-| What economic policies of President Biden concern Generation X?                               |
-| How does President Biden’s stance on healthcare affect Generation X’s view of his presidency? |
-| What role does Generation X play in the 2024 presidential election?                           |
-| How does President Biden’s foreign policy relate to Generation X’s political interests?       |
-| In what ways are Generation X’s expectations for the presidency not being met by Biden?       |
+| What are the major concerns of Generation X about President Biden’s policies?                |
+| How did Generation X vote in past presidential elections, specifically in 2020’s election?   |
+| What could President Biden do to earn the trust and confidence of Generation X?              |
+| Has the Biden administration addressed the issues specifically centered around Generation X? |
+| How does the political ideology of Generation X differ from other generations?               |
 
 ### Step-back prompting
 
@@ -87,13 +92,13 @@ get_chat_response(prompt = paste0(query99 |> toupper(), p2),
   knitr::kable()
 ```
 
-| resp                                                                                                                 |
+| resp                                                                                                                                 |
 |:-----------------------------------------------------------------------|
-| What is causing Generation X’s apprehension towards President Biden as we get closer to the 2024 election?           |
-| Why does Generation X seem to lack confidence in President Biden ahead of the 2024 Presidential Elections?           |
-| Why is Generation X displaying signs of unease about President Biden’s leadership as the 2024 election approaches?   |
-| Why does the prospect of a Biden re-election in 2024 stir concerns among the Generation X demographic?               |
-| What is causing President Biden’s seeming loss of trust among Generation X voters as the 2024 election comes nearer? |
+| What causes Generation X’s apprehensions towards President Biden as the 2024 elections approach?                                     |
+| Why is there a sense of unease among Generation X towards President Biden in the context of the upcoming 2024 Presidential Election? |
+| Can we delve into the reasons behind Generation X’s reservations about President Biden’s prospects in the 2024 election?             |
+| Why are the individuals from Generation X skeptical about President Biden’s campaign for the 2024 Presidential elections?            |
+| What are the factors contributing to the wariness of Generation X towards President Biden’s 2024 election campaign?                  |
 
 ### Hypothetical answer (HyDE)
 
@@ -112,9 +117,9 @@ get_chat_response(prompt = paste0(query99 |> toupper(), hyde),
   knitr::kable()
 ```
 
-| resp                                                                                                                                                                                                                                                                        |
+| resp                                                                                                                                                                                                                                                                                                                                                      |
 |:-----------------------------------------------------------------------|
-| Generation X’s skepticism towards President Biden for the 2024 election may stem from issues like concerns over his age, dissatisfaction with his handling of key issues such as the economy and COVID-19, and a perceived lack of progress on promised policy initiatives. |
+| Generation X’s wariness towards President Biden is influenced by concerns over economic instability, debates on free speech, and policies perceived as leaned towards younger and older demographics. Particularly, fears about increased taxes, inflation, and contentious social issues might sway their preference for the 2024 Presidential Election. |
 
 ### Hypothetical questions
 
@@ -161,11 +166,11 @@ hyp_question[1:n,] |>
   knitr::kable()
 ```
 
-|                                                                                                         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-|:------------|:----------------------------------------------------------|
-| What is Johnson’s career trajectory and what notable projects has he worked on?                         | But it had an impact in the media of its day – a metaphor for the arc of Johnson’s very Gen X career, which began in the heyday of print media and flourishes in today’s social media age. <b>Johnson has now logged nearly two decades with Geto & de Milly, a Manhattan public affairs firm. He made a splash alongside Beyoncé, promoting the opening of Brooklyn’s marquee Barclays Center.</b> “It was a big moment – bringing this world-class facility to the borough,” says Johnson, who also worked on The New York Times headquarters. |
-| What are some reasons that delaying retirement could be beneficial for Generation X?                    | By putting a plan in place today, Generation X can work with their family to make sure the money their family has worked so hard to earn stays in their family and makes a rich retirement even more possible.” <b>Why retiring later than you hoped can be a good idea. As you get closer to retirement, your financial strategies have to shift a bit.</b> The oldest Gen Xers will soon be old enough to retire.                                                                                                                              |
-| What are some common health issues that Gen Xers might face as they age, particularly regarding vision? | Like all generations, there are particular health challenges that Gen Xers should be aware of as they grow older. <b>Here are some of those challenges and ways to deal with them. The early 40s is when even people with great vision start experiencing eye problems.</b> One of the most common conditions is presbyopia.                                                                                                                                                                                                                     |
+|                                                                                                         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+|:-----------|:-----------------------------------------------------------|
+| What does being a part of Generation X mean to Pinnock in her current role?                             | Pinnock says being Gen X serves her well in her current role. <b>She says she and her friends call their generation the MacGyvers, after the 1980s television character who could figure his way out of any jam using his own wits and knowledge. “We were the only generation to know what it was like to not work with technology but are not scared to work with it,” Pinnock says.</b> “You had to rely on yourself.                                                                                                                                                                                            |
+| What factors have caused a discrepancy between the mean and median retirement savings for Generation X? | The reason for the vast gulf between the mean and the median is the 40% of the demographic that has absolutely nothing saved for retirement, which drags down the average like an anchor. <b>Gen X was the first generation to enter the labor force after employers transitioned to defined contribution accounts like 401(k) plans. “While the generation before them could rely on pension plans, most Gen Xers have had to depend on themselves for retirement savings,” said Laura Sterling of Georgia’s Own Credit Union, the second-largest credit union in Georgia.</b> “Pensions are a thing of the past.” |
+| At what age did Generation X workers typically begin saving for retirement according to the study?      | Consequentially, Generation X fell behind on their savings before they even knew it was time to get started.” <b>According to the research, which surveyed 5,725 employees, the median age when Gen X workers began saving for retirement was 30, as compared with Millennials (25), Gen Z (19). Baby Boomers, who were working in the age of pensions and very early 401(k) plans, started at a median age of 35.</b> Now only 17% of Gen Xers feel very confident they will be able to retire with a comfortable lifestyle, according to the study conducted in late 2022.                                        |
 
 ## Building contexts
 
