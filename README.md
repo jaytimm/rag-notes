@@ -1,4 +1,4 @@
-    ## [1] "2024-01-10"
+2024-01-10
 
 # RAG systems in R
 
@@ -70,13 +70,13 @@ get_chat_response(prompt = paste0(query99 |> toupper(), p1),
   knitr::kable()
 ```
 
-| resp                                                                                                 |
+| resp                                                                                        |
 |:-----------------------------------------------------------------------|
-| What policies of President Biden are causing concern among Generation X?                             |
-| How has President Biden’s approval rating shifted among Generation X since his inauguration?         |
-| What specific issues are driving Generation X’s skepticism towards President Biden’s administration? |
-| How did Generation X vote in the 2020 Election and what might that mean for 2024?                    |
-| Can President Biden regain support from Generation X before the 2024 election?                       |
+| What are the predominant political values of Generation X?                                  |
+| How might President Biden’s policies affect Generation X economically?                      |
+| Has President Biden’s administration addressed the concerns of Generation X?                |
+| What role might Generation X play in the 2024 Presidential Elections?                       |
+| What may be the long-term impacts of Biden’s presidency on Generation X’s retirement plans? |
 
 ### Step-back prompting
 
@@ -94,13 +94,13 @@ get_chat_response(prompt = paste0(query99 |> toupper(), p2),
   knitr::kable()
 ```
 
-| resp                                                                                                                                       |
+| resp                                                                                                                         |
 |:-----------------------------------------------------------------------|
-| What are the reasons for Generation X’s skepticism towards President Biden as we approach the 2024 Presidential Election?                  |
-| Why does Generation X show reluctance towards President Biden’s potential re-election in 2024?                                             |
-| What elements make Generation X apprehensive about the possibility of President Biden seeking re-election in 2024?                         |
-| How does President Biden’s impact on issues significant to Generation X influence their sentiments towards the 2024 Presidential Election? |
-| Why isn’t President Biden striking a positive chord with Generation X, especially looking forward to the 2024 Presidential Election?       |
+| What are the reasons Generation X is skeptical of President Biden for the 2024 elections?                                    |
+| Why does Generation X express doubt towards President Biden’s potential re-election in 2024?                                 |
+| What is causing Generation X’s reluctance to support President Biden in the 2024 elections?                                  |
+| Why is President Biden failing to secure the confidence of Generation X for the 2024 Presidential race?                      |
+| What factors contribute to Generation X’s hesitancy towards President Biden’s candidacy for the 2024 presidential elections? |
 
 ### Hypothetical answer (HyDE)
 
@@ -119,9 +119,9 @@ get_chat_response(prompt = paste0(query99 |> toupper(), hyde),
   knitr::kable()
 ```
 
-| resp                                                                                                                                                                                                                                                                        |
+| resp                                                                                                                                                                                                                                                                                                                |
 |:-----------------------------------------------------------------------|
-| Generation X may be wary of President Biden due to concerns regarding the economy and deficit spending, his handling of the pandemic, and his stance on issues such as foreign policy and climate change. Also, his age is a concern for some Gen X voters looking at 2024. |
+| Generation X’s wariness towards President Biden primarily arises from concerns over rising inflation, policy direction, and perceived lack of strong, decisive leadership. The potential backlash of prolonged pandemic measures also factors into their apprehension as the 2024 Presidential Election approaches. |
 
 ### Hypothetical questions
 
@@ -172,11 +172,11 @@ hyp_question[1:n,] |>
   knitr::kable()
 ```
 
-|                                                                                                                                                  |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-|:---------------|:-------------------------------------------------------|
-| What are some characteristics of Generation X films and how did the Generation X movies “Before Sunset” and “Heathers” portray these attributes? | Travel, spontaneity, and the potential of something beautiful, especially when it comes to love, are hallmarks of Generation X films. <b>Not many did it better than the movie that spawned two more films: Before Sunset (2004) and Before Midnight (2013). “My teen angst bulls—t has a body count.”</b> If that doesn’t sum up the brilliantly dark and humorous Heathers, we don’t know what does.                                                                                                                                                                     |
-| How did the inflation-adjusted cost of attending a public four-year college impact the debt situation of Generation X?                           | According to the Education Data Initiative (EDI), the inflation-adjusted cost of attending a public four-year college soared from $2,499 in 1969-70 to $9,580 in 2020-21. <b>Gen Xers, unable to afford the degrees that many emerging new-economy jobs required, became the first generation to borrow its way into school — and decades of debt. “Gen X had to pay much more for college and was more likely to have student debt,” said Rogers.</b> Despite comprising just 20% of the population, Gen X now holds nearly 57% of America’s $1.63 trillion student debt. |
-| How did the criticism that Generation X faced in the ’90s compare to the criticism that Millennials and Gen Z receive from Boomers today?        | Aside from this whole “Karen generation” blip, Gen X continues to be largely overlooked, and that fact — as well as their silent delight in it — is possibly one of the most Generation X things to happen to the class of 1965 to 1980. <b>Back in the ’90s, Gen X bore the same kind of criticism Boomers tend to heap on Millennials and Gen Z now. It’s not necessarily that they want to watch a cage match.</b> It’s just they’re so relieved it’s someone else being called slackers and downers for a change.                                                      |
+|                                                                                              |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+|:----------|:------------------------------------------------------------|
+| What was the topic of discussion held by Jasmin Singer with a panel of Gen Xers and experts? | Gen Xers, who grew up with mixtapes, MTV, and significant global events, are often seen as the last to fully embrace the analog world, yet some view their skepticism and independence critically. <b>Connections guest host Jasmin Singer has gathered a panel of Gen Xers and experts to discuss their legacy, myths, and lasting impact. If you’re a Gen Xer, join us to relive your mixtape and flannel days.</b>                                                                                                                                                      |
+| What are the challenges that Gen Xers faced with regards to affording college degrees?       | According to the Education Data Initiative (EDI), the inflation-adjusted cost of attending a public four-year college soared from $2,499 in 1969-70 to $9,580 in 2020-21. <b>Gen Xers, unable to afford the degrees that many emerging new-economy jobs required, became the first generation to borrow its way into school — and decades of debt. “Gen X had to pay much more for college and was more likely to have student debt,” said Rogers.</b> Despite comprising just 20% of the population, Gen X now holds nearly 57% of America’s $1.63 trillion student debt. |
+| What factors are influencing this individual’s vote for Biden over Trump?                    | But as of now, he says his Biden vote is driven by a disgust at the influence that former President Donald Trump has had over the Republican Party. <b>“I don’t hate the Republican Party. I hate the MAGA wing of it,” he said, “These people are lunatics.”</b> Gen Xers are facing a cascading series of economic concerns: aging parents, raising children, saving for retirement, rising housing costs, higher food and gas prices, all hitting most acutely in middle age.                                                                                           |
 
 ## Building contexts
 
